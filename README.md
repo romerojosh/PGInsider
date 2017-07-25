@@ -8,14 +8,18 @@ your Intel MKL installation and CUDA Toolkit installation respectively.
 * The `Makefile` is configured for modern Pascal P100 GPUs. If you are using an older model, modify the compute capability flag (`cc60`) as needed. 
 * Optionally, populate `MAGMADIR` variable in the `Makefile` with the root directory of your MAGMA installation to enable
 compilation with MAGMA.
-* With these settings, compile progam with `make` command.
+* With these settings, compile with `make` command.
 
 ### Running
-Once compiled, program can be run as follows
+Successful compilation will result in two executables, `testDn` and `main`. 
+* `testDn` runs a quick test of the cuSOLVER dense Cholesky factorization:
+
+	$ ./testDn
+
+* `main` runs and compares times of the Cholesky factorizations and eigenproblem reduction for system of size `N`:
 
 	$ ./main N
 
-where `N` is the desired matrix size.
 
 ### License
 This code is released under an MIT license which can be found in `LICENSE`. 

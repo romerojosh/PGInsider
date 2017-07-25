@@ -22,5 +22,6 @@ main:  main.F90 zhegst_gpu.F90 cusolverDn_m.cuf toolbox.F90 wallclock.c
 	pgf90 -c ${FLAGS} cusolverDn_m.cuf
 	pgf90 -c ${FLAGS} zhegst_gpu.F90
 	pgf90 -o main main.F90 zhegst_gpu.o cusolverDn_m.o toolbox.o wallclock.o ${LIBS} ${FLAGS} -pgf90libs ${INCS}
+	pgf90 -o testDn testDn.cuf cusolverDn_m.o ${LIBS} ${FLAGS}
 clean:
-	rm main *.mod *.o
+	rm main testDn *.mod *.o
